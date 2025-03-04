@@ -1,7 +1,71 @@
 /* 
-Ignore this:
+Note for me:
 You must implement the following breakpoints that will be considered desktop, tablet, and mobile. 
 The browser should display a desktop version of the site when the width of the browser window is 992px and above. 
 Tablet view should appear only if the width of the browser window is between 768px and 991px, inclusively. 
 Mobile view should appear only if the width of the browser is equal to or less than 767px */
 
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title h1 {
+    text-align: center;
+}
+
+.menus {
+    display: flex;
+    flex-wrap: nowrap;
+    text-wrap: wrap;
+}
+
+.menus h3 {
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+    background: lightgray;
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px;
+}
+
+.menus p {
+    font-size: 16px;
+    margin: 10px;
+}
+
+.menu-opt {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background: lightslategray;
+}
+
+.menu-opt p {
+    padding: 0px 15px 0px 15px;
+    text-align: center;
+    color: white;
+}
+
+
+/* Desktop  */
+@media only screen and (min-width: 992px) {
+    body {
+        display: grid;
+    }
+}
+
+/* Tablet */
+@media (min-width:768) and (max-width: 991px) {
+    body {
+        display: grid;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    .menus {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
