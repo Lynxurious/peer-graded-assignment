@@ -8,25 +8,26 @@ Mobile view should appear only if the width of the browser is equal to or less t
 html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px
 }
+
+/* Menus */
 
 .title h1 {
     text-align: center;
+}
+
+.title h2 {
+    text-align: start;
+    margin: 0px 0px 0px 15px;
 }
 
 .menus {
     display: flex;
     flex-wrap: nowrap;
     text-wrap: wrap;
-}
-
-.menus h3 {
-    font-size: 24px;
-    text-align: center;
-    padding: 10px 15px 10px 15px;
-    background: lightgray;
-    border-radius: 10px 10px 0px 0px;
-    margin: 0px;
+    justify-content: center;
+    gap: 10px;
 }
 
 .menus p {
@@ -34,38 +35,83 @@ body {
     margin: 10px;
 }
 
+/* Menu Options */
+
 .menu-opt {
+    position: relative;
+    flex: 1;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 10px;
     background: lightslategray;
+}
+
+.menu-opt h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    /* text-align: center; */
+    padding: 5px 10px;
+    background: lightgray;
+    border-radius: 5px 0px 5px 0px;
+    margin: 0px;
 }
 
 .menu-opt p {
     padding: 0px 15px 0px 15px;
     text-align: center;
     color: white;
+    padding: 40px 10px 10px 10px;
 }
 
 
+/***************/
+/* Media Query */
+/***************/
+
 /* Desktop  */
 @media only screen and (min-width: 992px) {
-    body {
-        display: grid;
+    .menus {
+        display: flex;
+        flex-wrap: nowrap;
     }
 }
 
 /* Tablet */
-@media (min-width:768) and (max-width: 991px) {
-    body {
-        display: grid;
+@media (min-width: 768px) and (max-width: 991px) {
+    .menus {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu-opt {
+        flex: 1 1 90%;
+        max-width: 45%;
+    }
+
+    .menu-opt:last-child{
+        flex: 1 1 90%;
+        max-width: 95%;
     }
 }
 
 /* Mobile */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
     .menus {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        flex: 1 100%;
+        flex-direction: column;
+    }
+
+    .menu-opt {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .menu-opt:last-child {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 }
